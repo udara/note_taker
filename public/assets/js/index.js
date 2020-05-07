@@ -49,6 +49,7 @@ var renderActiveNote = function() {
   }
 };
 
+
 // Get the note data from the inputs, save it to the db and update the view
 var handleNoteSave = function() {
   var newNote = {
@@ -56,10 +57,14 @@ var handleNoteSave = function() {
     text: $noteText.val()
   };
 
-  saveNote(newNote).then(function(data) {
+  try{
+    saveNote(newNote);
     getAndRenderNotes();
     renderActiveNote();
-  });
+  }
+  catch{
+
+  }
 };
 
 // Delete the clicked note
@@ -112,7 +117,7 @@ var renderNoteList = function(notes) {
   for (var i = 0; i < notes.length; i++) {
     var note = notes[i];
 
-    var $li = $("<li class='list-group-item'>").data(note);
+    var $li = $("<li id='"+i+"' class='list-group-item'>").data(note);
     var $span = $("<span>").text(note.title);
     var $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
