@@ -57,6 +57,19 @@ var handleNoteSave = function() {
     text: $noteText.val()
   };
 
+  saveNote(newNote).then(function() {
+    getAndRenderNotes();
+    renderActiveNote();
+  });
+};
+/*
+// Get the note data from the inputs, save it to the db and update the view
+var handleNoteSave = function() {
+  var newNote = {
+    title: $noteTitle.val(),
+    text: $noteText.val()
+  };
+
   try{
     saveNote(newNote);
     getAndRenderNotes();
@@ -66,6 +79,7 @@ var handleNoteSave = function() {
 
   }
 };
+*/
 
 // Delete the clicked note
 var handleNoteDelete = function(event) {

@@ -31,7 +31,7 @@ app.post("/api/notes", function(req, res) {
   current_note.id = JSON.stringify(saved_notes.length);
   saved_notes.push(req.body);
   let json = JSON.stringify(saved_notes);
-  writeFile(json);
+  res.send(writeFile(json));
 });
 
 app.delete("/api/notes/:id", function(req, res) {
