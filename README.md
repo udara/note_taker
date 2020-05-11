@@ -1,3 +1,9 @@
+![](https://github.com/udara/note_taker/blob/master/screenshot.jpg?raw=true)
+
+Demo - https://www.youtube.com/watch?v=yxKUXNsrScs&feature=youtu.be (Select HD to see clearly)
+
+Deployed application - https://udaranotetaker.herokuapp.com
+
 # Unit 11 Express Homework: Note Taker
 
 ## Description
