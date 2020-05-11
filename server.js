@@ -3,7 +3,7 @@ let path = require("path");
 let app = express();
 const fs = require("fs");
 const util = require("util");
-const PORT = 3000;
+const PORT = process.env.PORT || 80
 const public_dir = __dirname + `/public/`;
 const output_dir = __dirname + `/db/`;
 
